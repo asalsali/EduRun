@@ -116,6 +116,7 @@ export type MessageWithSignals = MessageRow & {
 
 // Typed context JSONB — validated at runtime before use
 export interface SessionContext {
+  name?: string
   deadline_proximity?: string
   assignment?: string
 }
@@ -124,6 +125,7 @@ export function parseSessionContext(raw: Json): SessionContext {
   if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return {}
   const obj = raw as Record<string, Json>
   return {
+    name: typeof obj.name === 'string' ? obj.name : undefined,
     deadline_proximity: typeof obj.deadline_proximity === 'string' ? obj.deadline_proximity : undefined,
     assignment: typeof obj.assignment === 'string' ? obj.assignment : undefined,
   }

@@ -25,7 +25,7 @@ const DISPLAY_TIMEZONE = 'America/Toronto'
 
 // Demo session from supabase/seed.sql.
 // Visit: /instructor/sessions/00000000-0000-0000-0000-000000000001
-export const DEMO_SESSION_ID = '00000000-0000-0000-0000-000000000001'
+const DEMO_SESSION_ID = '00000000-0000-0000-0000-000000000001'
 
 // ── Signal display config ─────────────────────────────────────────────────────
 // Full class strings (not constructed dynamically) so Tailwind's purge picks them up.
